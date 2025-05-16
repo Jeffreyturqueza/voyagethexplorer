@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>™voyagethexplorer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .carousel-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+    .card__container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 300%;
+    }
+    .card {
+      width: 100vw;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .card__img img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .carousel-btn {
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .prev {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .next {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .carousel-controls {
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      width: 100%;
+    }
+    .dot {
+      background-color: #ccc;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="parallax">
+    <section class="landing">
+      <div class="logo">™voyagethexplorer</div>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="card__container">
+          <div class="card">
+            <div class="card__img">
+              <img src="img/carousel/luzon.jpg" alt="img" />
+            </div>
+            <div class="card__details">
+              <h2>Explore</h2>
+              <p>Discover new places.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__img">
+              <img src="img/carousel/visayas.jpg" alt="img" />
+            </div>
+            <div class="card__details">
+              <h2>Wander</h2>
+              <p>Experience the journey.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__img">
+              <img src="img/carousel/mindanao.jpg" alt="img" />
+            </div>
+            <div class="card__details">
+              <h2>Adventure</h2>
+              <p>Live the thrill.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn next">&#10095;</button>
+
+        <div class="carousel-controls">
+          <span class="dot active" data-index="0">1</span>
+          <span class="dot" data-index="1">2</span>
+          <span class="dot" data-index="2">3</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const container = document.querySelector('.card__container');
+      container.style.transform = `translateX(-${currentIndex * 100}vw)`;
+
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex].classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % cards.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      updateCarousel();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        currentIndex = parseInt(dot.getAttribute('data-index'));
+        updateCarousel();
+      });
+    });
+
+    updateCarousel();
+  </script>
+</body>
+
+</html>
