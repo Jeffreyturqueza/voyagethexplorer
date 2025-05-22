@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pagination = document.getElementById('pagination');
 
   let currentIndex = 0;
-  const cardWidth = cards[0].offsetWidth + 30; // 328px + approx margin
+  const cardWidth = cards[0].offsetWidth + 40; // 328px + approx margin
 
   function updateCarousel() {
     const translateX = -currentIndex * cardWidth;
