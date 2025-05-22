@@ -1,25 +1,174 @@
 main {
-	background-color: red;
-	width: 67.5rem;
-    margin-top: 5rem;
+	/* background-color: red; */
+	width: 82rem;
+    margin-top: 6.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .popular-section {
-	background-color: blue;
+	/* background-color: blue; */
+	width: 100%;
+	padding: 1rem;
+}
 
+.popular-header {
+	font-size: 2rem;
+	color: #a2e06c;
 }
 
 .popular-content {
+	margin-top: 1.8rem;
+}
+
+.carousel-section {
+	display: flex;
+	flex-direction: column;
+	gap: 1.4rem;
+}
+
+.card-container {
+	overflow: hidden;
+}
+
+.carousel-track {
+	display: flex;
+	width: fit-content;
+	gap: 1rem;
+}
+
+/* Per Card */
+
+.card-article {
+	height: 24em; 
+	position: relative;
+	overflow: hidden; /* Ensures nothing spills out */
+	border-radius: 0.4rem;
+}
+
+.card-img {
+	height: 100%;
+	width: 18rem;
+	object-fit: cover;
+	border-radius: 0.4rem;
+	display: block;
+}
+
+.card-data {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 0 1rem;
+	background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+	border-bottom-left-radius: 0.4rem;
+	border-bottom-right-radius: 0.4rem;
+}
+
+.card-description,
+.card-title {
+	color: white;
+	margin: 0;
+}
+
+.description-wrap {
+	height: 6rem;
+	overflow: hidden;
 
 }
 
-.places-section {
-	background-color: green;
+.card-description {
+	font-size: 0.8rem;
+	display: -webkit-box;
+	/* -webkit-line-clamp: 4; */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: all 0.3s ease;
+	/* max-height: calc(1.2em * 4); 4 lines, approximate */
+  }
+  
+  /* On hover, remove truncation */
+  .card-description:hover {
+	-webkit-line-clamp: unset;
+	overflow: visible;
+	text-overflow: unset;
+	display: block;
+	max-height: none;
+  }
+  
 
+
+.slider-controls {
+	width: 100%;
+	/* background: red; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.slider-buttons {
+	height: 1.6rem;
+	border-radius:1rem;
+	width: 4rem;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#pagination {
+	font-size: 1.4rem;
+}
+
+.slider-buttons img {
+	height: 4rem;
+}
+
+
+.places-section {
+	/* background-color: green; */
+	width: 100%;
+	padding: 2rem 1rem;
+	border: 1px solid black;
+	background-color: rgb(238, 238, 238);
+	border-radius: 2rem 2rem 0 0;
 }
 
 .places-content {
-
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem 0;
+	gap: 2rem;
 }
 
+.places-wrap {
+	/* background-color: grey; */
+	height: 16rem;
+	width: 18rem; 
+	border-radius: 0.4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.places-img {
+	border: 2px solid black;
+	border-radius: 0.4rem;
+	height: 100%;
+	/* background-image: black; */
+}
+
+.places-desc {
+	padding: 0.4rem;
+}
+
+.places-desc h3 {
+	font-size: 1rem;
+}
+
+.places-desc p {
+	font-size: 0.8rem;
+}
 

@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Funnel Sans", sans-serif;
 }
 
 html {
@@ -13,10 +14,9 @@ html {
 }
 
 body{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-    font-family: "Funnel Sans", sans-serif;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
     font-family: var(--body-font);
     background-color: var(--body-color);
     color: var(--text-color);
@@ -45,9 +45,8 @@ body{
 
 header{	
     background-color: rgb(50, 50, 50);
-	border-radius: 0.2rem;
-
-	position: fixed;
+	  border-radius: 0.2rem;
+	  position: fixed;
     z-index: 1000;
     width: 100%;
     top: 0;
@@ -105,9 +104,9 @@ header ul a{
     text-decoration: none;
     padding: 10px 15px;
     align-items: center;
-    background-color: rgb(255 255 255 / 30%);
-    backdrop-filter: blur(10px);
-    
+    /* background-color: rgb(255 255 255 / 30%);
+    backdrop-filter: blur(10px); */
+    background-color: white;
 }
 
 .dropdown .content{
@@ -116,6 +115,13 @@ header ul a{
     min-width: 100px;
 }
 
+.content a {
+  color: black;
+}
+
+.content a:hover {
+  color: #a2e06c;
+}
 .dropdown:hover .content{
     display: block;
 }
