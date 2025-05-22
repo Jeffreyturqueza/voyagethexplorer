@@ -262,40 +262,32 @@ img {
 }
 
 .carousel-container {
-  gap: 150px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 2000px;
-  margin: 100px auto;
-  height: 600px;
-  width: 1400px;
-  padding: 200px;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px;
   background: white;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   border-radius: 12px;
 }
 
 .text-section {
-  margin-left: -90px;
   max-width: 300px;
-  margin-top: 1%;
 }
 
 .text-section h2 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  margin-right: 20%;
 }
 
 .slider-wrapper {
   flex: 1;
   margin-left: 40px;
-  margin-top: -100px;
 }
 
 .slider-controls {
-  margin-right: 10%;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -332,49 +324,36 @@ img {
 
 .card__article{
     position: relative;
-    width: 250px;
-    margin: 0 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
-.card__article img.card__img {
-  width: 100%;
-  height: 200%;    
+.card__img{
+    width: 328px;
+    border-radius: 1.5rem;
 }
 
-.card__data {
-  position: absolute;
-  bottom: -130px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  margin: 0 auto;
-  background-color: var(--container-color);
-  padding: 1rem;
-  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
-  border-radius: 1rem;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
+.card__data{
+    width: 280px;
+    background-color: var(--container-color);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s;
 }
-
-.card__article:hover .card__data {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
 .card__description{
     display: block;
-    font-size: 0.2rem;
+    font-size: var(--small-font-size);
     margin-bottom: .25rem;
 }
 
 .card__title{
-    font-size: 1rem;
+    font-size: var(--h2-font-size);
     font-weight: 500;
     color: var(--title-color);
     margin-bottom: .75rem;
@@ -685,127 +664,5 @@ img {
   .footer-bottom {
     text-align: center;
     padding: 10px;
-  }
-}
-
-/* Wander & Discoveries */
-
-.news-layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  margin-bottom: 3rem;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.hero-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.hero-text {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  color: white;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  max-width: 600px;
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero-text p {
-  font-size: 1.25rem;
-}
-
-/* Content Wrapper */
-.content-wrapper {
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-}
-
-/* Articles Grid */
-.card__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  flex: 3;
-}
-
-/* Sidebar */
-.sidebar {
-  flex: 1;
-  background: #f8f8f8;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  height: fit-content;
-}
-
-.sidebar h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 1rem;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #2a7a2a;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-  color: #4caf50;
-}
-
-/* Responsive */
-
-@media (max-width: 1024px) {
-  .content-wrapper {
-    flex-direction: column;
-  }
-
-  .card__container {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .sidebar {
-    margin-top: 2rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .card__container {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
   }
 }
