@@ -125,3 +125,21 @@ btnRight.addEventListener('click', () => {
     behavior: 'smooth',
   });
 });
+
+window.addEventListener("scroll", () => {
+	const header = document.getElementById("mainHeader");
+	const destinationSection = document.getElementById("destination");
+
+	// Get top position of destination section relative to viewport
+	const destinationTop = destinationSection.getBoundingClientRect().top;
+
+	// If destination section is near the top (adjust threshold as needed)
+	if (destinationTop <= 100) {
+		header.classList.remove("transparent");
+		header.classList.add("solid");
+	} else {
+		header.classList.remove("solid");
+		header.classList.add("transparent");
+	}
+});
+
