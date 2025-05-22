@@ -38,3 +38,70 @@ window.addEventListener("mousemove", (e) => {
 
     update(e.clientX);
 });
+
+/* destination */
+
+const track = document.querySelector(".carousel-track");
+const images = document.querySelectorAll(".carousel-track img");
+const pagination = document.getElementById("pagination");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+
+let currentIndex = 0;
+const totalPages = images.length;
+
+function updateCarousel() {
+  const offset = -currentIndex * (images[0].offsetWidth + 10);
+  track.style.transform = `translateX(${offset}px)`;
+  pagination.textContent = String(currentIndex + 1).padStart(2, '0');
+}
+
+prev.addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+});
+
+next.addEventListener("click", () => {
+  if (currentIndex < totalPages - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+updateCarousel();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector('.carousel-track');
+  const cards = document.querySelectorAll('.card__article');
+  const nextButton = document.getElementById('next');
+  const prevButton = document.getElementById('prev');
+  const pagination = document.getElementById('pagination');
+
+  let currentIndex = 0;
+  const cardWidth = cards[0].offsetWidth + 30; // 328px + approx margin
+
+  function updateCarousel() {
+    const translateX = -currentIndex * cardWidth;
+    track.style.transform = `translateX(${translateX}px)`;
+    pagination.textContent = String(currentIndex + 1).padStart(2, '0');
+  }
+
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < cards.length - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  // Optional: Initial call
+  updateCarousel();
+});
