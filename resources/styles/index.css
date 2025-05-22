@@ -687,3 +687,125 @@ img {
     padding: 10px;
   }
 }
+
+/* Wander & Discoveries */
+
+.news-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  margin-bottom: 3rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+/* Articles Grid */
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  flex: 3;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background: #f8f8f8;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  height: fit-content;
+}
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #2a7a2a;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #4caf50;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .card__container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sidebar {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .card__container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}

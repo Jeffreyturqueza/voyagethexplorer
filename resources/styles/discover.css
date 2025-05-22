@@ -1,0 +1,57 @@
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding-top: 120px;
+    }
+
+    h2 {
+      border-left: 5px solid blueviolet;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .story {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .story img {
+      width: 160px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .story-content {
+      flex: 1;
+    }
+
+    .story-content small {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .story-content h3 {
+      margin: 5px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .story-content p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .story-content .time {
+      color: gray;
+      font-size: 12px;
+    }

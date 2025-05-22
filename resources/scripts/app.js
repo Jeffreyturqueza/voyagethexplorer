@@ -105,3 +105,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Optional: Initial call
   updateCarousel();
 });
+
+const container = document.querySelector('.carousel-container');
+const btnLeft = document.querySelector('.carousel-arrow.left');
+const btnRight = document.querySelector('.carousel-arrow.right');
+
+const scrollAmount = 360; // width of each card + gap
+
+btnLeft.addEventListener('click', () => {
+  container.scrollBy({
+    left: -scrollAmount,
+    behavior: 'smooth',
+  });
+});
+
+btnRight.addEventListener('click', () => {
+  container.scrollBy({
+    left: scrollAmount,
+    behavior: 'smooth',
+  });
+});
