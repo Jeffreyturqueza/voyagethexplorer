@@ -257,18 +257,11 @@ img {
   }
 }
 
-
 .text-section {
   max-width: 300px;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-  .carousel-container {
+.carousel-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -326,11 +319,11 @@ img {
 .card__container{
     display: grid;
     row-gap: 3.5rem;
+    overflow: hidden;
 }
 
 .card__article{
     position: relative;
-    overflow: hidden;
 }
 
 .card__img{
