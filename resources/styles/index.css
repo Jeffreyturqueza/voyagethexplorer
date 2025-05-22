@@ -460,7 +460,84 @@ img {
     }
   }
 
-  /* about us */
+/* about us */
+.about-us {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #000;
+  background-color: #fff;
+  padding: 80px 40px;
+}
+
+.about-us__container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  gap: 60px;
+}
+
+.about-us__sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 280%;
+  font-size: 14px;
+}
+
+.about-us__sidebar li {
+  margin-bottom: 20px;
+}
+
+.about-us__sidebar a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.about-us__sidebar a:hover {
+  color: #666;
+}
+
+.about-us__content {
+    margin-left: 10%;
+  flex: 1;
+}
+
+.about-us__content h2 {
+  margin-bottom: 3%;
+  margin-top: 6%;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.about-us__content p {
+  margin-bottom: 1%;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.about-us__image {
+  margin-left: 16.5%;
+  margin-top: -3%;
+  text-align: center;
+}
+
+.about-us__image img {
+  display: inline-block;
+  max-width: 80%;
+  height: auto;
+}
+
+
+@media (max-width: 768px) {
+  .about-us__container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-us__content h2 {
+    font-size: 28px;
+  }
+}
 
 
 /*footer*/
