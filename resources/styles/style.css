@@ -106,28 +106,122 @@ header ul a{
     display: block;
 }
 
-footer {
+/*footer*/
 
-	width: 100%;
-	background-color: black;
-	display: flex;
-	justify-content: space-between;
-	padding: 4rem;
+.site-footer {
+  background-color: #111;
+  color: #eee;
+  width: 100%;
+  padding: 40px 0 10px;
+  opacity: 1;            
+  visibility: visible;    
+  position: relative;
 }
 
-footer h2 {
-	color: white;
+.site-footer.visible {
+  opacity: 0;
+  visibility: hidden;
 }
 
-footer ul li {
-	list-style: none;
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-footer ul li a {
-	text-decoration: none;
-	color: white;
+.footer-section {
+  flex: 1;
+  min-width: 280px;
+  margin-bottom: 20px;
 }
 
-footer ul li a:hover{
-	color: blue;
+.footer-section h2,
+.footer-section h3 {
+  color: #a2e06c;
+  margin-bottom: 15px;
+}
+
+.site-description {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-socials a.fb { background-color: #3b5998; }
+.footer-socials a.ig { background-color: #e4405f; }
+.footer-socials a.gm { background-color: #ffffff; color: #111; }
+
+.footer-socials a:hover {
+  opacity: 0.8;
+}
+
+.phone-number {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #ccc;
+  text-align: right;
+}
+
+.footer-connect {
+  text-align: right;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-bottom {
+  text-align: right;
+  padding: 10px 40px;
+  border-top: 1px solid #222;
+  font-size: 14px;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-connect {
+    text-align: center;
+  }
+
+  .phone-number {
+    text-align: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 10px;
+  }
 }

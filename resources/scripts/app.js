@@ -38,4 +38,3 @@ window.addEventListener("mousemove", (e) => {
 
     update(e.clientX);
 });
-

@@ -290,6 +290,19 @@ img {
   margin-bottom: 10px;
 }
 
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 6px;
+}
+
 .card__container{
     display: grid;
     row-gap: 3.5rem;
