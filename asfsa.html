@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .carousel-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+.text-section {
+  max-width: 300px;
+}
+
+.text-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.slider-wrapper {
+  flex: 1;
+  margin-left: 40px;
+}
+
+.slider-controls {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#pagination {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.carousel {
+  overflow: hidden;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 6px;
+}
+</style>
+<body>
+  <div class="carousel-container">
+    <div class="text-section">
+      <h2>Travel</h2>
+      <p>Discover exciting and latest world events, travel deals, safety tips and more news.</p>
+    </div>
+    <div class="slider-wrapper">
+      <div class="slider-controls">
+        <button id="prev">&larr;</button>
+        <span id="pagination">01</span>
+        <button id="next">&rarr;</button>
+      </div>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="img/carousel/luzon.jpg" alt="1" />
+          <img src="img/carousel/visayas.jpg" alt="2" />
+          <img src="img/carousel/mindanao.jpg" alt="3" />
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>
+
+<script>
+const track = document.querySelector(".carousel-track");
+const images = document.querySelectorAll(".carousel-track img");
+const pagination = document.getElementById("pagination");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+
+let currentIndex = 0;
+const totalPages = images.length;
+
+function updateCarousel() {
+  const offset = -currentIndex * (images[0].offsetWidth + 10);
+  track.style.transform = `translateX(${offset}px)`;
+  pagination.textContent = String(currentIndex + 1).padStart(2, '0');
+}
+
+prev.addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+});
+
+next.addEventListener("click", () => {
+  if (currentIndex < totalPages - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+updateCarousel();
+
+</script>
+</html>

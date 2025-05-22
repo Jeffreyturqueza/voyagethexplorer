@@ -34,7 +34,7 @@ window.addEventListener("mousemove", (e) => {
 
     rotateDegree = (xValue / window.innerWidth / 2) * 20;
 
-    console.log(rotateDegree);
+    // console.log(rotateDegree);
 
     update(e.clientX);
 });
